@@ -1,0 +1,9 @@
+<?php namespace Someline\Models\Wechat;
+
+
+use Someline\Component\Wechat\Models\SomelineWechatBase;
+
+class SomelineWechat extends SomelineWechatBase
+{
+    //
+}

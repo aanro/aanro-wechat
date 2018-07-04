@@ -1,0 +1,10 @@
+<?php
+
+namespace Someline\Api\Controllers;
+
+use Someline\Component\Wechat\Api\Controllers\SomelineWechatsControllerBase;
+
+class SomelineWechatsController extends SomelineWechatsControllerBase
+{
+    //
+}

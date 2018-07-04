@@ -1,0 +1,16 @@
+<?php
+
+namespace Someline\Transformers;
+
+use Someline\Component\Wechat\Transformers\SomelineWechatTransformerBase;
+use Someline\Models\Wechat\SomelineWechat;
+use Someline\Transformers\BaseTransformer;
+
+/**
+ * Class SomelineWechatTransformer
+ * @package namespace Someline\Transformers;
+ */
+class SomelineWechatTransformer extends SomelineWechatTransformerBase
+{
+    //
+}

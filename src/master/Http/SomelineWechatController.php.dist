@@ -1,0 +1,171 @@
+<?php
+
+namespace Someline\Http\Controllers;
+
+use Someline\Component\Wechat\Http\Controllers\SomelineWechatControllerBase;
+use Someline\Component\Wechat\SomelineWechatService;
+
+class SomelineWechatController extends SomelineWechatControllerBase
+{
+
+    /**
+     * 更新微信菜单
+     */
+    public function doUpdateMenu()
+    {
+        $buttons = [
+            [
+                "type" => "view",
+                "name" => "Someline",
+                "url" => "https://www.someline.com/"
+            ]
+//            [
+//                "type" => "click",
+//                "name" => "今日歌曲",
+//                "key" => "V1001_TODAY_MUSIC"
+//            ],
+//            [
+//                "name" => "菜单",
+//                "sub_button" => [
+//                    [
+//                        "type" => "view",
+//                        "name" => "搜索",
+//                        "url" => "http://www.soso.com/"
+//                    ],
+//                    [
+//                        "type" => "view",
+//                        "name" => "视频",
+//                        "url" => "http://v.qq.com/"
+//                    ],
+//                    [
+//                        "type" => "click",
+//                        "name" => "赞一下我们",
+//                        "key" => "V1001_GOOD"
+//                    ],
+//                ],
+//            ],
+        ];
+        $this->updateMenu($buttons);
+    }
+
+    /**
+     * # 若直接返回结果，将会直接返回给微信服务器，不再继续处理单独的类型
+     *
+     * @param $type
+     * @param $message
+     * @return null
+     */
+    protected function onReceivedMessage($type, $message)
+    {
+        info("onReceivedMessage: " . $message);
+//        return "收到消息"; // # 若直接返回结果，不再继续处理单独的类型
+    }
+
+    /**
+     * @param $message
+     * @return string
+     */
+    protected function onReceivedSubscribeEvent($message)
+    {
+//        return SomelineWechatService::newMessageNews(
+//            '欢迎关注 Someline！',
+//            'https://www.someline.com/cn/pickhub/images/large/aff8e920599bef515abfedaabf47b60f58e304a2.jpg',
+//            'https://www.someline.com/',
+//            '等你很久了！'
+//        );
+        return '欢迎关注 Someline！';
+    }
+
+    /**
+     * @param $qrSceneId
+     * @param $message
+     * @return string
+     */
+    protected function onReceivedQRCodeEvent($qrSceneId, $message)
+    {
+        return "Someline 收到二维码事件消息[$qrSceneId]";
+    }
+
+    /**
+     * @param $event
+     * @param $message
+     * @return string
+     */
+    protected function onReceivedOtherEvent($event, $message)
+    {
+        return 'Someline 收到事件消息';
+    }
+
+    /**
+     * @param $message
+     * @return string
+     */
+    protected function onReceivedText($message)
+    {
+        return '收到文字消息';
+    }
+
+    /**
+     * @param $message
+     * @return string
+     */
+    protected function onReceivedImage($message)
+    {
+        return '收到图片消息';
+    }
+
+    /**
+     * @param $message
+     * @return string
+     */
+    protected function onReceivedVoice($message)
+    {
+        return '收到语音消息';
+    }
+
+    /**
+     * @param $message
+     * @return string
+     */
+    protected function onReceivedVideo($message)
+    {
+        return '收到视频消息';
+    }
+
+    /**
+     * @param $message
+     * @return string
+     */
+    protected function onReceivedLocation($message)
+    {
+        return '收到坐标消息';
+    }
+
+    /**
+     * @param $message
+     * @return string
+     */
+    protected function onReceivedLink($message)
+    {
+        return '收到链接消息';
+    }
+
+    /**
+     * @param $message
+     * @return string
+     */
+    protected function onReceivedShortVideo($message)
+    {
+        return '收到小视频消息';
+    }
+
+    /**
+     * @param $message
+     * @return string
+     */
+    protected function onReceivedOtherMessage($message)
+    {
+        return '收到其它消息';
+    }
+
+}

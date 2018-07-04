@@ -1,0 +1,10 @@
+<?php
+
+namespace Someline\Validators;
+
+use Someline\Component\Wechat\Validators\SomelineWechatValidatorBase;
+
+class SomelineWechatValidator extends SomelineWechatValidatorBase
+{
+    //
+}
